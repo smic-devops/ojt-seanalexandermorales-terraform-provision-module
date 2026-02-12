@@ -40,5 +40,18 @@ variable "instance_type" {
 
 variable "ec2_sg_id" {
   type        = string
+  description = "The ID of the EC2 Security Group"
   default = ""
+}
+
+variable "username" {
+  type        = string
+  description = "The username of the database"
+  default = "itss-ojt-morales"
+}
+
+variable "password" {
+  type        = string
+  description = "The password of the database"
+  default = "1a2s3d4f"
 }
