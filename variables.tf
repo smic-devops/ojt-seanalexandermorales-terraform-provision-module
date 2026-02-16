@@ -41,7 +41,7 @@ variable "instance_type" {
 variable "username" {
   type        = string
   description = "The username of the database"
-  default = "itss-ojt-morales"
+  default = "morales"
 }
 
 variable "password" {
