@@ -60,7 +60,8 @@ resource "aws_security_group_rule" "ec2_egress_to_all" {
   to_port                  = 3306
   protocol                 = "tcp"
   cidr_blocks              = []
-  security_group_id        = "sg-07e9aaf13dc1a8788"
+  security_group_id        = aws_security_group.ec2_sg.id
+  source_security_group_id = aws_security_group.rds_sg.id
 }
 
 resource "aws_security_group" "rds_sg" {
