@@ -5,6 +5,16 @@ resource "aws_instance" "web" {
   subnet_id       = var.subnet_id
   vpc_security_group_ids = [var.ec2_sg_id]
 
+  user_data = <<-EOT
+    #!/bin/bash
+    sudo yum update -y
+
+    sudo yum install -y amazon-ssm-agent
+
+    sudo systemctl enable amazon-ssm-agent
+    sudo systemctl start amazon-ssm-agent
+  EOT
+
   tags = {
     Name            = "${var.prefix}-ec2-module"
     Environment     = "Sandbox"
