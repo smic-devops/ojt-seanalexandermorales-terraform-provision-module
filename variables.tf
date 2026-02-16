@@ -38,12 +38,6 @@ variable "instance_type" {
   default = "t3.micro" 
 }
 
-variable "ec2_sg_id" {
-  type        = string
-  description = "The ID of the EC2 Security Group"
-  default = ""
-}
-
 variable "username" {
   type        = string
   description = "The username of the database"

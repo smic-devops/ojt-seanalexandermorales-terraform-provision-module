@@ -25,7 +25,6 @@ variable "prefix" {
 variable "ec2_sg_id" {
   description = "The security group ID of the EC2 instance"
   type        = string
-  default = null
 }
 
 variable "tg_arn" { 
